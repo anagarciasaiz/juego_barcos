@@ -1,6 +1,8 @@
-from clases.Tablero import *
-from clases.Barco import *
+from clases import Tablero
 from Conventions import *
+from  clases import Barco
+
+
 
 
 instances = {}
@@ -32,7 +34,7 @@ def jugar(self):
   self.jugadas.add(self)
   
   if self.barco is not None:
-      if len(casilla.barco.casillas - self.casillas_jugadas) == 0:
+      if len(casillas - self.casillas_jugadas) == 0:
           print("Hundido !!")
       else:
           print("Tocado !")

@@ -1,9 +1,16 @@
+from itertools import product
+from clases import Conventions
 from clases.Case import *
 from clases.Barco import *
-from Conventions import *
+from clases.Conventions import *
 
+  # performance / legibilidad:
+  num_lineas = Conventions.tablero_num_lineas
+  num_columnas = Conventions.tablero_num_columnas
+  num2l = Conventions.generar_num_linea
+  num2c = Conventions.generar_num_columna
 
-
+@staticmethod
 def __init__(self):
 # Creamos las casillas:
   generar_casillas()
@@ -11,14 +18,9 @@ def __init__(self):
   # Creamos los barcos:
   generar_barcos()
   
-  # performance / legibilidad:
-  num_lineas = Conventions.tablero_num_lineas
-  num_columnas = Conventions.tablero_num_columnas
-  num2l = Conventions.generar_num_linea
-  num2c = Conventions.generar_num_columna
-  
   # Creamos la herramienta para poder seguir la situación
   self.casillas_jugadas = set()
+
   
   # Generamos aquí los etiquetas para facilitar la visualización
   self.etiqueta_lineas = [num2l(x) for x in range(num_lineas)]
